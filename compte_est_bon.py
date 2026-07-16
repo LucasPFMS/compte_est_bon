@@ -37,6 +37,14 @@ def add_number(numbers, number):
     return numbers
 
 
+def is_ending(the_end):
+    end_game = input("Veux-tu t'arrêter ? o/n")
+    if end_game == "o":
+        return True
+    else:
+        return False
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     all_numbers: list = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 25, 50, 75, 100]
@@ -52,7 +60,8 @@ if __name__ == '__main__':
     final = final_number()
     print("Tu dois arriver à : ", final)
     new_number = 0
-    while new_number != final and len(my_numbers) != 1:
+    stop_game = False
+    while new_number != final and len(my_numbers) != 1 and stop_game is False:
         first_number = int(input("Veuillez entrer un premier nombre parmis les tiens: "))
         del_number(my_numbers, first_number)
         my_operator = input("Choisis un oppérateur entre +,-,*,/")
@@ -61,6 +70,7 @@ if __name__ == '__main__':
         new_number = calculate(first_number, second_number, my_operator)
         add_number(my_numbers, new_number)
         print("=", new_number)
+        stop_game = is_ending(stop_game)
     if new_number == final:
         print("Le compte est bon !")
 
