@@ -1,7 +1,5 @@
 # This is a sample Python script.
 import random
-
-
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -23,12 +21,25 @@ def final_number():
     return number
 
 
+def calculate(number_1, number_2, ope):
+    if ope == "+":
+        return number_1 + number_2
+    elif ope == "-":
+        return number_1 - number_2
+    elif ope == "*":
+        return number_1 * number_2
+    elif ope == "/":
+        return number_1 / number_2
+    
+
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     all_numbers: list = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 25, 50, 75, 100]
     m = 0
     my_numbers: list = []
-    print("voici tes nombres: ")
+    print("Voici tes nombres: ")
     while m < 6:
         random_number = random.choice(all_numbers)
         draw(my_numbers, random_number)
@@ -36,4 +47,12 @@ if __name__ == '__main__':
         print(my_numbers[m])
         m += 1
     final = final_number()
+    print("Tu dois arriver à : ", final)
+    new_number = 0
+    while new_number != final or len(my_numbers) != 1:
+        first_number = int(input("Veuillez entrer un premier nombre parmis les tiens: "))
+        del_number(my_numbers, first_number)
+        my_operator = input("Choisis un oppérateur entre +,-,*,/")
+        second_number = int(input("Veuillez entrer un second nombre parmis les tiens: "))
+        del_number(my_numbers, second_number)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
