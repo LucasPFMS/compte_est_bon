@@ -30,8 +30,11 @@ def calculate(number_1, number_2, ope):
         return number_1 * number_2
     elif ope == "/":
         return number_1 / number_2
-    
 
+
+def add_number(numbers, number):
+    numbers.append(number)
+    return numbers
 
 
 # Press the green button in the gutter to run the script.
@@ -55,4 +58,7 @@ if __name__ == '__main__':
         my_operator = input("Choisis un oppérateur entre +,-,*,/")
         second_number = int(input("Veuillez entrer un second nombre parmis les tiens: "))
         del_number(my_numbers, second_number)
+        new_number = calculate(first_number, second_number, my_operator)
+        add_number(my_numbers, new_number)
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
