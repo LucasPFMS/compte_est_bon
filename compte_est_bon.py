@@ -62,6 +62,7 @@ if __name__ == '__main__':
     new_number = 0
     stop_game = False
     while new_number != final and len(my_numbers) != 1 and stop_game is False:
+        stop_game = is_ending(stop_game)
         first_number = int(input("Veuillez entrer un premier nombre parmis les tiens: "))
         del_number(my_numbers, first_number)
         my_operator = input("Choisis un oppérateur entre +,-,*,/")
@@ -70,7 +71,6 @@ if __name__ == '__main__':
         new_number = calculate(first_number, second_number, my_operator)
         add_number(my_numbers, new_number)
         print("=", new_number)
-        stop_game = is_ending(stop_game)
     if new_number == final:
         print("Le compte est bon !")
 
