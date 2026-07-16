@@ -13,6 +13,11 @@ def draw(choice, number):
     #  Press Ctrl+F8 to toggle the breakpoint.
 
 
+def del_number(numbers,number):
+    numbers.remove(number)
+    return numbers
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     all_numbers: list = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 25, 50, 75, 100]
