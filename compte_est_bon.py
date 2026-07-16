@@ -38,7 +38,7 @@ def add_number(numbers, number):
 
 
 def is_ending(the_end):
-    end_game = input("Veux-tu t'arrêter ? o/n")
+    end_game = input("Veux-tu t'arrêter ? o/n ")
     if end_game == "o":
         return True
     else:
