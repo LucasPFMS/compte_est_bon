@@ -52,7 +52,7 @@ if __name__ == '__main__':
     final = final_number()
     print("Tu dois arriver à : ", final)
     new_number = 0
-    while new_number != final or len(my_numbers) != 1:
+    while new_number != final and len(my_numbers) != 1:
         first_number = int(input("Veuillez entrer un premier nombre parmis les tiens: "))
         del_number(my_numbers, first_number)
         my_operator = input("Choisis un oppérateur entre +,-,*,/")
@@ -60,5 +60,8 @@ if __name__ == '__main__':
         del_number(my_numbers, second_number)
         new_number = calculate(first_number, second_number, my_operator)
         add_number(my_numbers, new_number)
+        print("=", new_number)
+    if new_number == final:
+        print("Le compte est bon !")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
