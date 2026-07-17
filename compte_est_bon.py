@@ -30,6 +30,7 @@ def calculate(number_1, number_2, ope):
         return number_1 * number_2
     elif ope == "/":
         return number_1 / number_2
+    return None
 
 
 def add_number(numbers, number):
@@ -37,7 +38,7 @@ def add_number(numbers, number):
     return numbers
 
 
-def is_ending(the_end):
+def is_ending():
     end_game = input("Veux-tu t'arrêter ? o/n ")
     if end_game == "o":
         return True
@@ -62,7 +63,7 @@ if __name__ == '__main__':
     new_number = 0
     stop_game = False
     while new_number != final and len(my_numbers) != 1 and stop_game is False:
-        stop_game = is_ending(stop_game)
+        stop_game = is_ending()
         first_number = int(input("Veuillez entrer un premier nombre parmis les tiens: "))
         del_number(my_numbers, first_number)
         my_operator = input("Choisis un oppérateur entre +,-,*,/")
